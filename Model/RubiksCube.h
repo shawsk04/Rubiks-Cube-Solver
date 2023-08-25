@@ -9,11 +9,11 @@ class RubiksCube {
 public:
     enum class FACE {
         UP,
-        DOWN,
         LEFT,
-        RIGHT,
         FRONT,
-        BACK
+        RIGHT,
+        BACK,
+        DOWN
     };
 
     enum class COLOR {
@@ -39,6 +39,7 @@ public:
 
     virtual COLOR getColor(FACE face, unsigned row, unsigned col) const = 0;
 
+    char getColorLetter(COLOR color) const;
 
     virtual bool isSolved() const = 0;
 
