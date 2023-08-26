@@ -5,6 +5,10 @@ using namespace std;
 //A base class for all Rubik's Cube Model
 
 
+#ifndef RUBIKS_CUBE_SOLVER_RUBIKSCUBE_H
+#define RUBIKS_CUBE_SOLVER_RUBIKSCUBE_H
+
+
 class RubiksCube {
 public:
     enum class FACE {
@@ -47,12 +51,12 @@ public:
     string getMove(MOVE ind) const;
 
 
- 
+
     //Print the Rubik Cube in Planar format.
 
     void print() const;
 
-    
+
 
     //Randomly shuffle the cube.
 
@@ -87,3 +91,5 @@ public:
     virtual RubiksCube& dPrime() = 0;
     virtual RubiksCube& d2() = 0;
 };
+
+#endif
