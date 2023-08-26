@@ -1,7 +1,5 @@
 #include "RubiksCube.h"
 
-// #include <bits/stdc++.h>
-// using namespace std;
 
 class RubiksCube3dArray : public RubiksCube
 {

@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 #include "Model/RubiksCube3dArray.cpp"
 #include "Model/RubiksCube1dArray.cpp"
+#include "Model/RubiksCubeBitboard.cpp"
 
 using namespace std;
 
 int main() {
     // RubiksCube3dArray object;
-    RubiksCube1dArray object;
+    // RubiksCube1dArray object;
+    RubiksCubeBitboard object;
 
     object.print();
     cout << "\n\n";
