@@ -5,6 +5,7 @@
 #include "Model/RubiksCube1dArray.cpp"
 #include "Model/RubiksCubeBitboard.cpp"
 #include "Solver/DFSSolver.h"
+#include "Solver/BFSSolver.h"
 
 using namespace std;
 
@@ -115,28 +116,55 @@ int main()
     // else
     //     cout << "Cube2 is not present\n";
 
-    RubiksCube3dArray cube;
+
+// TESTING DFS SOLVER ----------------------------------------------------------------------------------------
+
+    // RubiksCube3dArray cube;
+    // cube.print();
+
+    // vector<RubiksCube::MOVE> shuffle_moves = cube.randomShuffleCube(5);
+
+    // cout << "MOVES FOR SHUFFLING:";
+    // for (auto move : shuffle_moves)
+    //     cout << cube.getMove(move) << " ";
+    // cout << "\n";
+
+    // cube.print();
+
+    // DFSSolver<RubiksCube3dArray, Hash3d> dfsSolver(cube, 6);
+
+    // vector<RubiksCube::MOVE> solve_moves = dfsSolver.solve();
+
+    // cout << "MOVES FOR SOLVING:";
+    // for (auto move : solve_moves)
+    //     cout << cube.getMove(move) << " ";
+    // cout << "\n";
+
+    // dfsSolver.rubiksCube.print();
+
+
+
+// TESTING BFS SOLVER ----------------------------------------------------------------------------------------
+    
+    RubiksCubeBitboard cube;
     cube.print();
 
-    vector<RubiksCube::MOVE> shuffle_moves = cube.randomShuffleCube(5);
+    vector<RubiksCube::MOVE> shuffle_moves = cube.randomShuffleCube(4);
 
     cout << "MOVES FOR SHUFFLING:";
-    for (auto move : shuffle_moves)
-        cout << cube.getMove(move) << " ";
+    for(auto move: shuffle_moves) cout << cube.getMove(move) << " ";
     cout << "\n";
 
     cube.print();
 
-    DFSSolver<RubiksCube3dArray, Hash3d> dfsSolver(cube, 6);
-
-    vector<RubiksCube::MOVE> solve_moves = dfsSolver.solve();
+    BFSSolver<RubiksCubeBitboard, HashBitboard> bfsSolver(cube);
+    vector<RubiksCube::MOVE> solve_moves = bfsSolver.solve();
 
     cout << "MOVES FOR SOLVING:";
-    for (auto move : solve_moves)
-        cout << cube.getMove(move) << " ";
+    for(auto move: solve_moves) cout << cube.getMove(move) << " ";
     cout << "\n";
 
-    dfsSolver.rubiksCube.print();
+    bfsSolver.rubiksCube.print();
 
     return 0;
 }
