@@ -43,12 +43,12 @@ public:
 
     virtual COLOR getColor(FACE face, unsigned row, unsigned col) const = 0;
 
-    char getColorLetter(COLOR color) const;
+    static char getColorLetter(COLOR color);
 
     virtual bool isSolved() const = 0;
 
     //Returns the move in the string format.
-    string getMove(MOVE ind);
+    static string getMove(MOVE ind);
 
 
 

@@ -2,7 +2,7 @@
 
 
 //Given a color return it's first letter
-char RubiksCube::getColorLetter(COLOR color) const {
+char RubiksCube::getColorLetter(COLOR color) {
     switch (color) {
     case COLOR::BLUE:
         return 'B';
