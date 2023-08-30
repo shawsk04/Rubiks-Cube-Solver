@@ -51,22 +51,22 @@ int main()
 
 
 // Random Shuffle Testing---------------------------------------------------------------------
-    // RubiksCubeBitboard cube;
-    // cube.print();
-    // vector<RubiksCube::MOVE> moves = cube.randomShuffleCube(5);
-    // for (auto move : moves)
-    // {
-    //     cout << cube.getMove(move) << " ";
-    // }
-    // cube.print();
+    RubiksCubeBitboard cube;
+    cube.print();
+    vector<RubiksCube::MOVE> moves = cube.randomShuffleCube(10);
+    for (auto move : moves)
+    {
+        cout << cube.getMove(move) << " ";
+    }
+    cube.print();
 
 
 // Creating two cubes------------------------------------------------------------------
     // RubiksCube3dArray cube1;
     // RubiksCube3dArray cube2;
 
-    RubiksCube1dArray cube1;
-    RubiksCube1dArray cube2;
+    // RubiksCube1dArray cube1;
+    // RubiksCube1dArray cube2;
 
     // RubiksCubeBitboard cube1;
     // RubiksCubeBitboard cube2;
@@ -99,22 +99,22 @@ int main()
 
     // unordered_map<RubiksCube3dArray, bool, Hash3d> mp1;
 
-    unordered_map<RubiksCube1dArray, bool, Hash1d> mp1;
+    // unordered_map<RubiksCube1dArray, bool, Hash1d> mp1;
 
     // unordered_map<RubiksCubeBitboard, bool, HashBitboard> mp1;
 
-    mp1[cube1] = true;
-    cube2.randomShuffleCube(8);
+    // mp1[cube1] = true;
+    // cube2.randomShuffleCube(8);
 
-    if (mp1[cube1])
-        cout << "Cube1 is present\n";
-    else
-        cout << "Cube1 is not present\n";
+    // if (mp1[cube1])
+    //     cout << "Cube1 is present\n";
+    // else
+    //     cout << "Cube1 is not present\n";
 
-    if (mp1[cube2])
-        cout << "Cube2 is present\n";
-    else
-        cout << "Cube2 is not present\n";
+    // if (mp1[cube2])
+    //     cout << "Cube2 is present\n";
+    // else
+    //     cout << "Cube2 is not present\n";
 
 
     return 0;
