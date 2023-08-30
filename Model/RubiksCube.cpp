@@ -22,7 +22,7 @@ char RubiksCube::getColorLetter(COLOR color) const {
 
 // Describe a move using an index
 
-string RubiksCube::getMove(MOVE ind) const {
+string RubiksCube::getMove(MOVE ind) {
     switch (ind) {
     case MOVE::L:
         return "L";

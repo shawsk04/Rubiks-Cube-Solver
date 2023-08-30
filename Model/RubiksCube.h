@@ -48,7 +48,7 @@ public:
     virtual bool isSolved() const = 0;
 
     //Returns the move in the string format.
-    string getMove(MOVE ind) const;
+    string getMove(MOVE ind);
 
 
 
