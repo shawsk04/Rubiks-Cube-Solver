@@ -1,7 +1,10 @@
+/* Author: Sonu Kumar Shaw (shawsk04) */
+
 #include <bits/stdc++.h>
 #include "Model/RubiksCube3dArray.cpp"
 #include "Model/RubiksCube1dArray.cpp"
 #include "Model/RubiksCubeBitboard.cpp"
+#include "Solver/DFSSolver.h"
 
 using namespace std;
 
@@ -49,19 +52,17 @@ int main()
     // if (object.isSolved()) cout << "Solved\n";
     // else cout << "Not Solved\n";
 
+    // Random Shuffle Testing---------------------------------------------------------------------
+    // RubiksCubeBitboard cube;
+    // cube.print();
+    // vector<RubiksCube::MOVE> moves = cube.randomShuffleCube(10);
+    // for (auto move : moves)
+    // {
+    //     cout << cube.getMove(move) << " ";
+    // }
+    // cube.print();
 
-// Random Shuffle Testing---------------------------------------------------------------------
-    RubiksCubeBitboard cube;
-    cube.print();
-    vector<RubiksCube::MOVE> moves = cube.randomShuffleCube(10);
-    for (auto move : moves)
-    {
-        cout << cube.getMove(move) << " ";
-    }
-    cube.print();
-
-
-// Creating two cubes------------------------------------------------------------------
+    // Creating two cubes------------------------------------------------------------------
     // RubiksCube3dArray cube1;
     // RubiksCube3dArray cube2;
 
@@ -71,8 +72,7 @@ int main()
     // RubiksCubeBitboard cube1;
     // RubiksCubeBitboard cube2;
 
-
-// Equality and assignment of cubes---------------------------------------------------------
+    // Equality and assignment of cubes---------------------------------------------------------
 
     // if (cube1 == cube2)
     //     cout
@@ -94,8 +94,7 @@ int main()
     // else
     //     cout << "Not Equal\n";
 
-
-// Unordered_map of Cubes-------------------------------------------------------------
+    // Unordered_map of Cubes-------------------------------------------------------------
 
     // unordered_map<RubiksCube3dArray, bool, Hash3d> mp1;
 
@@ -116,6 +115,28 @@ int main()
     // else
     //     cout << "Cube2 is not present\n";
 
+    RubiksCube3dArray cube;
+    cube.print();
+
+    vector<RubiksCube::MOVE> shuffle_moves = cube.randomShuffleCube(5);
+
+    cout << "MOVES FOR SHUFFLING:";
+    for (auto move : shuffle_moves)
+        cout << cube.getMove(move) << " ";
+    cout << "\n";
+
+    cube.print();
+
+    DFSSolver<RubiksCube3dArray, Hash3d> dfsSolver(cube, 6);
+
+    vector<RubiksCube::MOVE> solve_moves = dfsSolver.solve();
+
+    cout << "MOVES FOR SOLVING:";
+    for (auto move : solve_moves)
+        cout << cube.getMove(move) << " ";
+    cout << "\n";
+
+    dfsSolver.rubiksCube.print();
 
     return 0;
 }

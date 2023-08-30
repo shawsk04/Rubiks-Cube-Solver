@@ -1,3 +1,5 @@
+/* Author: Sonu Kumar Shaw (shawsk04) */
+
 #include "RubiksCube.h"
 
 
