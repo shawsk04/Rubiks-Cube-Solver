@@ -92,6 +92,12 @@ public:
     virtual RubiksCube& d() = 0;
     virtual RubiksCube& dPrime() = 0;
     virtual RubiksCube& d2() = 0;
+
+    string getCornerColorString(uint8_t ind) const;
+
+    uint8_t getCornerIndex(uint8_t ind) const;
+
+    uint8_t getCornerOrientation(uint8_t ind) const;
 };
 
 #endif
